@@ -13,7 +13,7 @@ import java.util.logging.ErrorManager;
 /**
  * Created by Ronin on 2015-12-27.
  */
-public class Question {
+public class Quiz {
     private Random random;
     private int points = 0;
     private int number = 0;
@@ -32,13 +32,17 @@ public class Question {
     private ResourceBundle resourceBundle;
     private ButtonGroup answersGroup;
 
-    public Question() {
+    private Application root;
+
+    public Quiz(Application application) {
+        root = application;
+
         //Initialize
         random = new Random();
         resourceBundle = ResourceBundle.getBundle("questions", Locale.ROOT);
 
         //Make GUI
-        JFrame frame = new JFrame("Question");
+        JFrame frame = new JFrame("Quiz");
         frame.setContentPane(question);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(600,400);
@@ -71,12 +75,20 @@ public class Question {
                         points++;
 
                     number++;
-                    pickQuestion();
+                    //If we finish the quiz
+                    if(number > 9) {
+                        frame.dispose();
+                        application.clearQuiz();
+                        new Result(application,points);
+                    }
+                    else {
+                        pickQuestion();
 
-                    //Reset selection
-                    answersGroup.clearSelection();
-                    //Why not .setSelected(false) ?
-                    //It doesn't work...
+                        //Reset selection
+                        answersGroup.clearSelection();
+                        //Why not .setSelected(false) ?
+                        //It doesn't work...
+                    }
                 }
             }
         });

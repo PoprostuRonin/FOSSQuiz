@@ -16,7 +16,7 @@ public class Application {
 
     private JDialog credits;
 
-    private Question questionWindow;
+    private Quiz quizWindow;
 
     public Application()
     {
@@ -37,13 +37,16 @@ public class Application {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
+        //We need that to create quiz object
+        final Application application = this;
+
         //Buttons listeners
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(questionWindow == null) {
+                if(quizWindow == null) {
                     frame.setVisible(false);
-                    questionWindow = new Question();
+                    quizWindow = new Quiz(application);
                 }
             }
         });
@@ -79,5 +82,15 @@ public class Application {
     public static void log(String message)
     {
         System.out.print(message+"\n");
+    }
+
+    public void show()
+    {
+        frame.setVisible(true);
+    }
+
+    public void clearQuiz()
+    {
+        quizWindow = null;
     }
 }
