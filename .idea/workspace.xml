@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b761ed18-86ee-4e31-ab42-aa85d521589b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.java" afterPath="$PROJECT_DIR$/src/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Credits.form" afterPath="$PROJECT_DIR$/src/Credits.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Credits.java" afterPath="$PROJECT_DIR$/src/Credits.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Quiz.java" afterPath="$PROJECT_DIR$/src/Quiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Result.java" afterPath="$PROJECT_DIR$/src/Result.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/questions.properties" afterPath="$PROJECT_DIR$/src/questions.properties" />
     </list>
     <ignored path="FOSSQuiz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +27,8 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28316832">
-              <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.72079206">
+              <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,8 +149,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="621" />
-    <option name="y" value="105" />
+    <option name="x" value="619" />
+    <option name="y" value="14" />
     <option name="width" value="1244" />
     <option name="height" value="999" />
   </component>
@@ -435,7 +428,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="621" y="105" width="1244" height="999" extended-state="0" />
+    <frame x="619" y="14" width="1244" height="999" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -824,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28316832">
-          <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.72079206">
+          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
