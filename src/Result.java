@@ -1,9 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-/**
- * Created by Ronin on 2015-12-28.
- */
 public class Result {
     private JPanel resultPanel;
     private JLabel scoreValue;
@@ -15,13 +12,7 @@ public class Result {
         frame.setContentPane(resultPanel);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         scoreValue.setText(Integer.toString(score));
-        menuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                application.show();
-            }
-        });
+        menuButton.addActionListener(menuButton -> { frame.setVisible(false); application.show(); });
         frame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {

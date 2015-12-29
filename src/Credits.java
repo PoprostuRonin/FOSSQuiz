@@ -1,7 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Credits extends JDialog {
     private JPanel contentPane;
@@ -11,6 +8,7 @@ public class Credits extends JDialog {
     public Credits() {
         //Make GUI
         setTitle("Credits");
+        buttonOK.addActionListener(buttonOK -> exit());
         setContentPane(contentPane);
         setSize(300,350);
         setModal(true);
@@ -19,15 +17,11 @@ public class Credits extends JDialog {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-
-        buttonOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                exit();
-            }
-        });
     }
 
+    /** Method for leaving this dialog */
     private void exit() {
+        setVisible(false);
         dispose();
     }
 }

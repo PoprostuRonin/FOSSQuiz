@@ -1,12 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.URI;
 
-/**
- * Created by Ronin on 2015-12-27.
- */
 public class Application {
     private JPanel mainMenu;
     private JButton creditsButton;
@@ -41,35 +36,26 @@ public class Application {
         final Application application = this;
 
         //Buttons listeners
-        playButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(quizWindow == null) {
-                    frame.setVisible(false);
-                    quizWindow = new Quiz(application);
-                }
+        playButton.addActionListener(playButton -> {
+            if(quizWindow == null) {
+                frame.setVisible(false);
+                quizWindow = new Quiz(application);
             }
         });
-        creditsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(credits != null) {
-                    credits.dispose();
-                }
-                credits = new Credits();
+        creditsButton.addActionListener(creditsButton -> {
+            if(credits != null) {
+                credits.dispose();
             }
+            credits = new Credits();
         });
-        viewSourceButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-                if(desktop != null) {
-                    try {
-                        desktop.browse(new URI("https://github.com/PoprostuRonin"));
-                    }
-                    catch (Exception error){
-                        Application.log(error.getMessage());
-                    }
+        viewSourceButton.addActionListener(viewSourceButton -> {
+            Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+            if(desktop != null) {
+                try {
+                    desktop.browse(new URI("https://github.com/PoprostuRonin/FOSSQuiz"));
+                }
+                catch (Exception error){
+                    Application.log(error.getMessage());
                 }
             }
         });

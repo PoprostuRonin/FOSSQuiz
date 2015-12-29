@@ -1,18 +1,8 @@
-import com.sun.org.apache.xml.internal.serializer.utils.SerializerMessages_zh_CN;
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.concurrent.SynchronousQueue;
-import java.util.logging.ErrorManager;
 
-/**
- * Created by Ronin on 2015-12-27.
- */
 public class Quiz {
     private Random random;
     private int points = 0;
@@ -64,36 +54,34 @@ public class Quiz {
         //Pick first question
         pickQuestion();
 
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Check if some of radio buttons is even selected
-                if(answer1.isSelected() || answer2.isSelected() || answer3.isSelected() || answer4.isSelected())
-                {
-                    //Is good answer selected
-                    if(answers[goodAnswer].isSelected())
-                        points++;
+        nextButton.addActionListener(nextButton -> {
+            //Check if some of radio buttons is even selected
+            if(answer1.isSelected() || answer2.isSelected() || answer3.isSelected() || answer4.isSelected())
+            {
+                //Is good answer selected
+                if(answers[goodAnswer].isSelected())
+                    points++;
 
-                    number++;
-                    //If we finish the quiz
-                    if(number > 9) {
-                        frame.dispose();
-                        application.clearQuiz();
-                        new Result(application,points);
-                    }
-                    else {
-                        pickQuestion();
+                number++;
 
-                        //Reset selection
-                        answersGroup.clearSelection();
-                        //Why not .setSelected(false) ?
-                        //It doesn't work...
-                    }
+                //If we finish the quiz
+                if(number > 9) {
+                    frame.dispose();
+                    application.clearQuiz();
+                    new Result(application,points);
+                }
+                else {
+                    pickQuestion();
+                    //Reset selection
+                    answersGroup.clearSelection();
+                    //Why not .setSelected(false) ?
+                    //It doesn't work...
                 }
             }
         });
     }
 
+    /** Picks new question */
     public void pickQuestion()
     {
         //Set title and "real" question ID
